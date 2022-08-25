@@ -1,0 +1,51 @@
+<h1>Login</h1>
+<form #loginForm="ngForm" (ngSubmit)="login(loginForm.form)">
+  <div class="loginContainer">
+    <p>
+      UserName:
+      <input
+        type="text"
+        name="usernameEditControl"
+        [(ngModel)]="username"
+        #userNameFormControl="ngModel"
+        required
+      />
+    </p>
+    <div *ngIf="userNameFormControl.errors">
+      <output *ngIf="userNameFormControl.errors['required']"
+        >User Name is required
+      </output>
+    </div>
+
+    <p>
+      Password:
+      <input
+        type="text"
+        name="passwordEditControl"
+        [(ngModel)]="password"
+        #passwordFormControl="ngModel"
+        minlength="5"
+        maxlength="8"
+        required
+      />
+    </p>
+    <div *ngIf="passwordFormControl.errors">
+      <div *ngIf="passwordFormControl.errors['required']">
+        Password is required.
+      </div>
+      <div *ngIf="passwordFormControl.errors['minlength']">
+        Password length should be atleast 5.
+      </div>
+    </div>
+
+    <div>
+      <input type="submit" value="Login" formnovalidate />
+      <input
+        type="button"
+        value="Clear"
+        class="clearBtn"
+        (click)="clearForm(loginForm.form)"
+      />
+    </div>
+  </div>
+</form>

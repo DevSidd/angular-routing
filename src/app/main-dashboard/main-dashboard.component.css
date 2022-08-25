@@ -1,0 +1,7 @@
+ul{
+    list-style: none;
+    text-decoration: underline;
+}
+li{
+    padding: 20px;
+}

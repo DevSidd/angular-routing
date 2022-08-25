@@ -1,0 +1,14 @@
+<h1>Welcome Dashboard</h1>
+<div style="text-align: center">
+  <b>{{ username }}</b>
+  <div style="float: right"><button (click)="logout()">Logout</button></div>
+</div>
+<div>
+  <ul>
+    <li [routerLink]="['./project']">Projects</li>
+    <li [routerLink]="['./device']">Devices</li>
+    <li [routerLink]="['./sme']">SME</li>
+  </ul>
+</div>
+
+<router-outlet></router-outlet>
