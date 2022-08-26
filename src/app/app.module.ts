@@ -14,6 +14,7 @@ import { DevicesModule } from './devices/devices.module';
 import { ProjectsModule } from './projects/projects.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserManagementService } from './services/useManagementService.service';
+import { UtiltiyModule } from './utiltiy/utiltiy.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { UserManagementService } from './services/useManagementService.service';
     DevicesModule,
     ProjectsModule,
     HttpClientModule,
+    UtiltiyModule,
   ],
   exports: [LoginComponent, SignUpComponent],
   providers: [
